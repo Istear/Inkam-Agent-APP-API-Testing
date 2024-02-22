@@ -1,0 +1,1407 @@
+{
+	"info": {
+		"_postman_id": "04999c4c-0707-4d5d-81c5-ef80d4f6ace6",
+		"name": "Inkam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29632525"
+	},
+	"item": [
+		{
+			"name": "App",
+			"item": [
+				{
+					"name": "Utilities",
+					"item": [
+						{
+							"name": "Countries",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jasonData = pm.response.json();\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.environment.set('firstCountryID',jasonData.data[0]._id);\r",
+											"pm.environment.set('firstCountryName',jasonData.data[0].name);\r",
+											"pm.environment.set('firstCountryCode',jasonData.data[0].code);"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"\r",
+											"  \r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "demo-secret",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "demo-client",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/utilities/countries",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"utilities",
+										"countries"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "65487f90553bd5a293faea5e",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cities",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "demo-secret",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "demo-client",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/utilities/cities",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"utilities",
+										"cities"
+									],
+									"query": [
+										{
+											"key": "countryId",
+											"value": "65487f90553bd5a293faea5e",
+											"disabled": true
+										},
+										{
+											"key": "_id",
+											"value": "6551e8081bb7858874d0b397",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Locations",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "demo-secret",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "demo-client",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/utilities/locations",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"utilities",
+										"locations"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "countryId",
+											"value": "655984b3f451f274484c56af",
+											"disabled": true
+										},
+										{
+											"key": "cityId",
+											"value": "6551e8151bb7858874d0b3b6",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Areas",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "demo-secret",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "demo-client",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/utilities/areas",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"utilities",
+										"areas"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "6551e8151bb7858874d0b3b6",
+											"disabled": true
+										},
+										{
+											"key": "countryId",
+											"value": "65487f90553bd5a293faea5e",
+											"disabled": true
+										},
+										{
+											"key": "cityId",
+											"value": "6551e8081bb7858874d0b397",
+											"disabled": true
+										},
+										{
+											"key": "locationId",
+											"value": "6551e8081bb7858874d0b397",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "demo-secret",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "demo-client",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/utilities/categories",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"utilities",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "6548b56619f2ee2eadc66cdc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Banners",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "demo-secret",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "demo-client",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/utilities/banners",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"utilities",
+										"banners"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "6548b56619f2ee2eadc66cdc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Brands",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "demo-secret",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "demo-client",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/utilities/brands",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"utilities",
+										"brands"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "6548b56619f2ee2eadc66cdc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jasonData = pm.response.json();\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"pm.environment.set('userID',jasonData.data.user._id); "
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "demo-secret",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "demo-client",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\": {\n        \"country\": {\n            \"_id\": \"{{firstCountryID}}\",\n            \"name\": \"{{firstCountryName}}\",\n            \"code\": \"{{firstCountryCode}}\"\n        },\n        \"phone\": \"{{phone}}\"\n    },\n    \"fcm\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/auth/login",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "OTP Verify",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jasonData = pm.response.json();\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"pm.environment.set('accessToken',jasonData.data.access.token);\r",
+											"pm.environment.set('refreshToken',jasonData.data.refresh.token);\r",
+											"pm.environment.set('firstName',jasonData.data.user.firstName);\r",
+											"pm.environment.set('lastName',jasonData.data.user.lastName);\r",
+											"pm.environment.set('email',jasonData.data.user.email);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "demo-secret",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "demo-client",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"{{userID}}\",\n    \"otp\": \"Confidential\",\n    \"fcm\": \"\",\n    \"phone\": {\n        \"country\": {\n            \"_id\": \"{{firstCountryID}}\",\n            \"name\": \"{{firstCountryName}}\",\n            \"code\": \"{{firstCountryCode}}\"\n        },\n        \"phone\": \"{{phone}}\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/auth/otp-verify",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"auth",
+										"otp-verify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Profile",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let firstName = pm.variables.replaceIn(\"{{$randomFirstName}}\");\r",
+											"pm.environment.set(\"firstName\",firstName);\r",
+											"\r",
+											"let lastName = pm.variables.replaceIn(\"{{$randomLastName}}\");\r",
+											"pm.environment.set(\"lastName\",lastName);\r",
+											"\r",
+											"let email = pm.variables.replaceIn(\"{{$randomEmail}}\");\r",
+											"pm.environment.set(\"email\", email);\r",
+											"//random gender\r",
+											"function getRandomGender() {\r",
+											"  const genders = [\"Male\", \"Female\"];\r",
+											"  const randomIndex = Math.floor(Math.random() * genders.length);\r",
+											"  return genders[randomIndex];\r",
+											"}\r",
+											"\r",
+											"let gender = getRandomGender();\r",
+											"pm.environment.set(\"gender\", gender);\r",
+											"\r",
+											"//random location\r",
+											"const jsonData = {\r",
+											"  \"655984bcf451f274484c56c9\": {\r",
+											"    \"location\": {\r",
+											"      \"658d00b929c5fd2595a49231\": \"658d017b29c5fd2595a4929d\",\r",
+											"      \"658d006229c5fd2595a491dd\": [\"659f814d95a6aca1f1565a10\", \"658d257f29c5fd2595a495bd\", \"658d014429c5fd2595a49277\", \"658d012b29c5fd2595a49266\"]\r",
+											"    }\r",
+											"  },\r",
+											"  \"655984c6f451f274484c56d8\": {\r",
+											"    \"location\": {\r",
+											"      \"65d19c93789a280035706b92\": \"65d1a5a9789a280035706ec9\",\r",
+											"      \"65d19cc9789a280035706ba6\": \"65d1a69e789a280035706eda\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"658d003d29c5fd2595a491be\": {\r",
+											"    \"location\": {\r",
+											"      \"65b887ccfd2f1d48ca1fbd18\": \"65d1a984789a280035706f19\",\r",
+											"      \"655984e2f451f274484c56f7\": \"65d1a9b9789a280035706f2a\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"65af890cd9ff7c0fb327d700\": {\r",
+											"    \"location\": {\r",
+											"      \"65d19d9a789a280035706bd0\": \"65d1a6c7789a280035706eef\",\r",
+											"      \"65d19ddb789a280035706be0\": \"65d1a6fc789a280035706f00\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"65af891fd9ff7c0fb327d70f\": {\r",
+											"    \"location\": {\r",
+											"      \"65d19e45789a280035706bf0\": \"65d1a9e2789a280035706f3f\",\r",
+											"      \"65d19e55789a280035706c00\": \"65d1aa0c789a280035706f50\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"65af8939d9ff7c0fb327d71e\": {\r",
+											"    \"location\": {\r",
+											"      \"65d1a258789a280035706e55\": \"65d1aa65789a280035706f65\",\r",
+											"      \"65d1a31e789a280035706e65\": \"65d1aa9b789a280035706f76\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"65af8963d9ff7c0fb327d72d\": {\r",
+											"    \"location\": {\r",
+											"      \"65d1a3fb789a280035706e75\": \"65d1aac2789a280035706f8b\",\r",
+											"      \"65d1a427789a280035706e85\": \"65d1aaf3789a280035706f9c\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"65af897ad9ff7c0fb327d73c\": {\r",
+											"    \"location\": {\r",
+											"      \"65d1a495789a280035706ea5\": \"65d1ab45789a280035706fc2\",\r",
+											"      \"65d1a47d789a280035706e95\": \"65d1ab23789a280035706fb1\"\r",
+											"    }\r",
+											"  }\r",
+											"};\r",
+											"\r",
+											"function getRandomElement(arr) {\r",
+											"  const randomIndex = Math.floor(Math.random() * arr.length);\r",
+											"  return arr[randomIndex];\r",
+											"}\r",
+											"\r",
+											"function getRandomCityLocationArea(data) {\r",
+											"  const randomCity = getRandomElement(Object.keys(data));\r",
+											"  const randomLocation = getRandomElement(Object.keys(data[randomCity].location));\r",
+											"  let randomArea;\r",
+											"\r",
+											"  if (Array.isArray(data[randomCity].location[randomLocation])) {\r",
+											"    randomArea = getRandomElement(data[randomCity].location[randomLocation]);\r",
+											"  } else {\r",
+											"    randomArea = data[randomCity].location[randomLocation];\r",
+											"  }\r",
+											"\r",
+											"  return {\r",
+											"    city: randomCity,\r",
+											"    location: randomLocation,\r",
+											"    area: randomArea\r",
+											"  };\r",
+											"}\r",
+											"\r",
+											"const randomData = getRandomCityLocationArea(jsonData);\r",
+											"let city = randomData.city;\r",
+											"pm.environment.set(\"city\",city);\r",
+											"let location = randomData.location;\r",
+											"pm.environment.set(\"location\",location);\r",
+											"let area = randomData.area;\r",
+											"pm.environment.set(\"area\",area);"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 202\", function () {\r",
+											"    pm.response.to.have.status(202);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"{{firstName}}\",\n    \"lastName\": \"{{lastName}}\",\n    \"email\": \"{{email}}\",\n    \"gender\": \"{{gender}}\",\n    \"countryId\": \"{{firstCountryID}}\",\n    \"cityId\": \"{{city}}\",\n    \"locationId\": \"{{location}}\",\n    \"areaId\": \"{{area}}\",\n    \"presentAddress\": \"\",\n    \"permanentAddress\": \"\",\n    \"nidNo\": \"\",\n    \"nidFront\": \"\",\n    \"nidBack\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/auth/update-profile",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"auth",
+										"update-profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload Profile Photo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 202\", function () {\r",
+											"    pm.response.to.have.status(202);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"photo\": \"data:image/jpeg;base64,/9j/4QCCRXhpZgAATU0AKgAAAAgABAEAAAMAAAABA0UAAAEBAAMAAAABA0UAAIdpAAQAAAABAAAAPgESAAMAAAABAAAAAAAAAAAAAZIIAAQAAAABAAAAAAAAAAAAAwEAAAMAAAABA0UAAAEBAAMAAAABA0UAAAESAAMAAAABAAAAAAAAAAD/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMACgcHCAcGCggICAsKCgsOGBAODQ0OHRUWERgjHyUkIh8iISYrNy8m\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/auth/upload-profile-photo",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"auth",
+										"upload-profile-photo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "File Upload",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 202\", function () {\r",
+											"    pm.response.to.have.status(202);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"file\": \"data:image/jpeg;base64,/9j/4QCCRXhpZgAATU0AKgAAAAgABAEAAAMAAAABA0UAAAEBAAMAAAABA0UAAIdpAAQAAAABAAAAPgESAAMAAAABAAAAAAAAAAAAAZIIAAQAAAABAAAAAAAAAAAAAwEAAAMAAAABA0UAAAEBAAMAAAABA0UAAAESAAMAAAABAAAAAAAAAAD/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMACgcHCAcGCggICAsKCgsOGBAODQ0OHRUWERgjHyUkIh8iISYrNy8m\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/auth/file-upload",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"auth",
+										"file-upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Info",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/auth/user-info",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"auth",
+										"user-info"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Landing",
+					"item": [
+						{
+							"name": "Get Acquisitions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/landing/acquisitions",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"landing",
+										"acquisitions"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "655334d00674c343c3bea86d",
+											"disabled": true
+										},
+										{
+											"key": "categoryId",
+											"value": "655334d00674c343c3bea86d",
+											"disabled": true
+										},
+										{
+											"key": "subCategoryId",
+											"value": "655334d00674c343c3bea86d",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Leads",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/landing/leads",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"landing",
+										"leads"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Withdrawals",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/landing/withdrawals",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"landing",
+										"withdrawals"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Withdraw Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"paymentMethodId\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/landing/withdraw-payment",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"landing",
+										"withdraw-payment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Acquisitions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"acquisition\": {\n        \"_id\": \"655334d00674c343c3bea86d\",\n        \"categories\": [\n            {\n                \"_id\": \"655334b30674c343c3bea839\",\n                \"name\": \"Test Category\",\n                \"photo\": null\n            }\n        ],\n        \"brands\": [\n            {\n                \"_id\": \"655334bc0674c343c3bea84e\",\n                \"name\": \"new brand\",\n                \"photo\": null\n            }\n        ],\n        \"name\": \"New Acquisition\",\n        \"photo\": null,\n        \"commission\": 200,\n        \"description\": null,\n        \"form\": {\n            \"steps\": [\n                {\n                    \"title\": \"Step 1\",\n                    \"fields\": [\n                        {\n                            \"title\": \"name\",\n                            \"type\": \"text\",\n                            \"dropdowns\": [],\n                            \"isRequired\": true,\n                            \"isLongText\": false,\n                            \"isMultipleFile\": false,\n                            \"isMultipleMedia\": false,\n                            \"position\": 1,\n                            \"_id\": \"655334ef0674c343c3bea88f\",\n                            \"value\": \"ow la la\"\n                        }\n                    ],\n                    \"position\": 0,\n                    \"_id\": \"655334d60674c343c3bea881\"\n                }\n            ]\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/landing/acquisitions",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"landing",
+										"acquisitions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Payment Methods",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/landing/payment-methods",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"landing",
+										"payment-methods"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "655334d00674c343c3bea86d",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Payment Method",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"mfs\",\n    \"mfsName\": \"\",\n    \"mfsNumber\": \"\",\n    \"bankName\": \"\",\n    \"bankBranch\": \"\",\n    \"bankAcc\": \"\",\n    \"bankAcHolder\": \"\",\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/landing/payment-methods",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"landing",
+										"payment-methods"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Payment Method",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"mfs\",\n    \"mfsName\": \"\",\n    \"mfsNumber\": \"\",\n    \"bankName\": \"\",\n    \"bankBranch\": \"\",\n    \"bankAcc\": \"\",\n    \"bankAcHolder\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/landing/payment-methods/659cd11ddf7a482eb74ae7e5",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"landing",
+										"payment-methods",
+										"659cd11ddf7a482eb74ae7e5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transactions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/landing/transactions",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"landing",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "655334d00674c343c3bea86d",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Renew",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"pm.environment.set('accessToken', pm.response.json().data.access.token);\r",
+											"pm.environment.set('refreshToken', pm.response.json().data.refresh.token);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "demo-secret",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "demo-client",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"accessToken\": \"{{accessToken}}\",\n    \"refreshToken\": \"{{refreshToken}}\",\n    \"fcm\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/auth/renew",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"auth",
+										"renew"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 202\", function () {\r",
+											"    pm.response.to.have.status(202);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{inkamBaseUrl}}/front-end/v1/auth/logout",
+									"host": [
+										"{{inkamBaseUrl}}"
+									],
+									"path": [
+										"front-end",
+										"v1",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
