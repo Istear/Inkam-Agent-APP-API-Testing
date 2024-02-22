@@ -1,2 +1,31 @@
-# Inkam-Agent-APP-API-Testing
-Inkam is a distribution mobile app. Where users can earn commission money by acquiring customer for product/services. In this API testing project I have tested all the restful APIs of the app to make sure the APIs are working fine and automated the API testing process. Also generated a report by newman.
+# Inkam Distribution Mobile App API Testing
+
+Inkam is a distribution mobile app where users can earn commission money by acquiring customers for products/services. This repository contains an API testing project where all the RESTful APIs of the app have been thoroughly tested to ensure functionality. Additionally, the API testing process has been automated, and a report has been generated using Newman.
+
+## API List
+
+- Countries
+- Cities
+- Locations
+- Areas
+- Categories
+- Banners
+- Brands
+- Login
+- OTP Verify
+- Update Profile
+- Upload Profile Photo
+- File Upload
+- User Info
+- Get Acquisition
+- Get Leads
+- Get Withdrawals
+- Add Acquisition
+- Get Payment Method
+- Get Transaction
+- Renew Access Token
+- Logout
+
+## Technologies
+- Postman: For API testing
+- Newman: For generating reports and running tests in CI/CD pipelines
